@@ -88,7 +88,7 @@ pConfig =
 
 output :: OutputConfig -> Text -> IO ()
 output cfg@OutputConfig {..} txt = do
-  unless (hasOutput cfg) $ Text.hPutStrLn stderr "Warning: no output options specified, run with --help to see options"
+  unless (hasOutput cfg) $ Text.hPutStrLn stderr "Warning: no output options specified, run with --help to see options!!!"
   forM_ outputDotPath $ \fp -> Text.writeFile fp txt
   forM_ outputPngPath $ \fp -> runDot ["-Tpng", "-o", fp]
   forM_ outputSvgPath $ \fp -> runDot ["-Tsvg", "-o", fp]
